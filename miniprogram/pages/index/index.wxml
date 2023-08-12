@@ -1,4 +1,8 @@
 <!--index.wxml-->
+<view class="search-bar">
+  <mp-searchbar type="text" placeholder="Search" class="weui-input" bindinput="bindSearchInput"> </mp-searchbar>
+  <button class="weui-btn weui-btn_primary" bindtap="onSearchTap">搜索</button>
+</view>
 <swiper indicator-dots="{{indicatorDots}}"
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <block wx:for="{{imgUrls}}">
@@ -9,7 +13,7 @@
 </swiper>
 
 <view class="plate">
-  <navigator url="/pages/action/action" open-type="switchTab" hover-class="other-navigator-hover" class="plate-item">
+  <navigator url="/pages/companyList/companyList?companyType=material" hover-class="other-navigator-hover" class="plate-item">
      <view class="plate-img">
        <image src="{{a1src}}"></image>
        </view>
@@ -17,23 +21,23 @@
         建筑材料       
         </text>
   </navigator>
-  <navigator url="/pages/signup/signup" open-type="switchTab" hover-class="other-navigator-hover" class="plate-item">
+  <navigator url="/pages/companyList/companyList?companyType=machine"  hover-class="other-navigator-hover" class="plate-item">
      <view class="plate-img">
        <image src="{{a2src}}"></image>
-       </view>
-       <text class="plate-info">
-        建筑劳务
-       </text>
-  </navigator>
-  <navigator url="/pages/teacher/teacher" hover-class="navigator-hover" class="plate-item">
-     <view class="plate-img">
-       <image src="{{a4src}}"></image>
        </view>
        <text class="plate-info">
         建筑设备
        </text>
   </navigator>
-  <navigator url="/pages/about/about" hover-class="navigator-hover" class="plate-item">
+  <navigator url="/pages/" hover-class="navigator-hover" class="plate-item">
+     <view class="plate-img">
+       <image src="{{a4src}}"></image>
+       </view>
+       <text class="plate-info">
+        专业人员
+       </text>
+  </navigator>
+  <navigator url="/pages/companyList/companyList?companyType=service" hover-class="navigator-hover" class="plate-item">
      <view class="plate-img">
        <image src="{{a3src}}"></image>
        </view>
@@ -46,7 +50,15 @@
        <image src="{{a3src}}"></image>
        </view>
        <text class="plate-info">
-        技术服务
+        建筑劳务
+       </text>
+  </navigator>
+  <navigator url="/pages/about/about" hover-class="navigator-hover" class="plate-item">
+     <view class="plate-img">
+       <image src="{{a3src}}"></image>
+       </view>
+       <text class="plate-info">
+        其他公司
        </text>
   </navigator>
 </view>

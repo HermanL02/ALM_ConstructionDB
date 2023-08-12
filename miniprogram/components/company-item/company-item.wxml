@@ -1,0 +1,21 @@
+<view catchtap="onCompanyInfo" class="companyItem">
+    <zz-company-logo logo="{{company.logo}}" name="{{company.name}}"></zz-company-logo>
+    
+    <view class="right">
+        <view class="title">{{company.name}}</view>
+        <view class="desc">
+            <text>{{company.cityName || '--'}}</text>
+            <text class="m-x-20" style="color:#ededed;">ǀ</text>
+            <text>{{'创立于' + company.foundedYear + '年'}}</text>
+        </view>
+        <view class="desc">{{'产品主营：' + mainProduct}}</view>
+        <view class="tags">
+            <text class="tag" wx:for="{{company.tagNames}}" wx:key="*this">{{item}}</text>
+        </view>
+    </view>
+    
+    <view class="score">
+        <text>评分</text>
+        <text class="font-28 font-500">{{score || '-'}}</text>
+    </view>
+</view>

@@ -1,78 +1,66 @@
+// pages/updateRecordResult/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    showUploadTip: false,
-    haveGetRecord: false,
-    envId: '',
-    record: ''
+
   },
 
+  /**
+   * 生命周期函数--监听页面加载
+   */
   onLoad(options) {
-    this.setData({
-      envId: options.envId
-    });
-    wx.showLoading({
-      title: '',
-    });
-    wx.cloud.callFunction({
-      name: 'quickstartFunctions',
-      config: {
-        env: this.data.envId
-      },
-      data: {
-        type: 'selectRecord'
-      }
-    }).then((resp) => {
-      this.setData({
-        record: resp.result.data
-      });
-      wx.hideLoading();
-    }).catch((e) => {
-      console.log(e);
-      this.setData({
-        showUploadTip: true
-      });
-      wx.hideLoading();
-    });
+
   },
 
-  updateRecord() {
-    wx.showLoading({
-      title: '',
-    });
-    wx.cloud.callFunction({
-      name: 'quickstartFunctions',
-      config: {
-        env: this.data.envId
-      },
-      data: {
-        type: 'updateRecord',
-        data: this.data.record
-      }
-    }).then((resp) => {
-      wx.navigateTo({
-        url: `/pages/updateRecordSuccess/index`,
-      });
-      wx.hideLoading();
-    }).catch((e) => {
-      console.log(e);
-      this.setData({
-        showUploadTip: true
-      });
-      wx.hideLoading();
-    });
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady() {
+
   },
 
-  bindInput (e) {
-    const index = e.currentTarget.dataset.index;
-    const record = this.data.record;
-    record[index].sales = Number(e.detail.value);
-    this.setData({
-      record
-    });
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow() {
+
   },
 
-});
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload() {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh() {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom() {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage() {
+
+  }
+})

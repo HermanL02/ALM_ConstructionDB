@@ -1,1 +1,7 @@
-{"navigationBarTitleText": "爱乐盟建筑供应商"}
+{
+  "usingComponents": { 
+    "mp-searchbar": "weui-miniprogram/searchbar/searchbar"
+  },
+  "navigationBarTitleText": "爱乐盟建筑供应商"
+
+}

@@ -1,0 +1,28 @@
+<view class="search-bar">
+  <mp-searchbar type="text" placeholder="Search" class="weui-input" bindinput="bindSearchInput"> </mp-searchbar>
+  <button class="weui-btn weui-btn_primary" bindtap="onSearchTap">搜索</button>
+</view>
+
+<view class="filter-section">
+<view class="custom-picker">
+    <picker mode="selector" range="{{categories}}" bindchange="onCategoryPickerChange">
+        <view class="picker">
+            <text>{{selectedCategory}}</text>
+        </view>
+    </picker>
+  </view>
+  <view class="custom-picker">
+    <picker mode="selector" range="{{sortingMethods}}" bindchange="onSortingPickerChange">
+        <view class="picker">
+            <text>{{selectedSortingMethod}}</text>
+        </view>
+    </picker>
+  </view>
+</view>
+
+<view class="company-list">
+  <block wx:for="{{companies}}" wx:key="id">
+    <company-item company="{{item}}"></company-item>
+  </block>
+</view>
+

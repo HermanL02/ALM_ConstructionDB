@@ -1,0 +1,74 @@
+/* components/company-item/company-item.wxss */
+.companyItem {
+  background: #fff;
+  border-radius: 16rpx;
+  box-sizing: border-box;
+  display: flex;
+  margin-bottom: 24rpx;
+  padding: 24rpx 32rpx;
+  position: relative;
+  width: 100%;
+}
+
+.companyItem .right {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  margin-left: 24rpx;
+  overflow: hidden;
+}
+
+.companyItem .right .title {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: #333;
+  display: -webkit-box;
+  font-size: 32rpx;
+  font-weight: 500;
+  line-height: 40rpx;
+  overflow: hidden;
+  padding-right: 80rpx;
+  text-overflow: ellipsis;
+}
+
+.companyItem .right .desc {
+  color: #666;
+  font-size: 26rpx;
+  font-weight: 400;
+  line-height: 36rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.companyItem .right .tags {
+  display: flex;
+}
+
+.companyItem .right .tags .tag {
+  background: #f1f2ff;
+  border-radius: 8rpx;
+  color: #203fcc;
+  display: inline-block;
+  font-size: 24rpx;
+  font-weight: 500;
+  margin-right: 12rpx;
+  padding: 6rpx 10rpx;
+}
+
+.companyItem .score {
+  align-items: center;
+  background: #1d2ce4;
+  border-radius: 0 0 200rpx 200rpx;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  min-width: 100rpx;
+  padding: 12rpx 0;
+  position: absolute;
+  right: 20rpx;
+  top: 0;
+}

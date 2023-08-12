@@ -1,0 +1,26 @@
+.filter-section {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.filter-label {
+  margin-right: 10px;
+}
+.custom-picker .picker {
+ 
+  font-size: 20px; /* 修改字体大小 */
+  background-color: #ffffff; /* 修改背景颜色 */
+}
+
+.picker {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.arrow {
+  margin-left: 5px;
+}

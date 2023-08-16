@@ -1,0 +1,18 @@
+<!--components/evaluation-item/evaluation-item.wxml-->
+
+<view class="evaluationItem">
+    <view class="header">
+        <view class="flex items-center">
+            <view class="flex flex-col m-l-16">
+                <text class="font-28 c-333 font-500">用户: {{evaluation._openid}}</text>
+                <text class="font-26 c-666">\n日期:{{evaluation.date}}</text>
+                <view wx:if="{{evaluation.alelmengCertified}}">
+      <text class="tag">爱乐盟认证</text>
+    </view> 
+            </view>
+        </view>
+    </view>
+    <view class="content">
+        <view class="message">{{evaluation.comment}}</view>
+    </view>
+</view>

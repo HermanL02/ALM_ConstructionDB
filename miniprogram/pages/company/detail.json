@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "company-item": "/components/company-item/company-item",
+   
+    "evaluation-item": "/components/evaluation-item/evaluation-item"
+
+  
+  }
 }

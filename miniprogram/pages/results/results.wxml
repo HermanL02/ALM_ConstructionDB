@@ -1,0 +1,5 @@
+<view class="company-list">
+  <block wx:for="{{companies}}" wx:key="_id">
+    <company-item company="{{item}}"></company-item>
+  </block>
+</view>

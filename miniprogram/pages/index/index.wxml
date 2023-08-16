@@ -13,7 +13,7 @@
 </swiper>
 
 <view class="plate">
-  <navigator url="/pages/companyList/companyList?companyType=material" hover-class="other-navigator-hover" class="plate-item">
+  <navigator url="/pages/companyList/companyList?companyType=建筑材料" hover-class="other-navigator-hover" class="plate-item">
      <view class="plate-img">
        <image src="{{a1src}}"></image>
        </view>
@@ -21,7 +21,7 @@
         建筑材料       
         </text>
   </navigator>
-  <navigator url="/pages/companyList/companyList?companyType=machine"  hover-class="other-navigator-hover" class="plate-item">
+  <navigator url="/pages/companyList/companyList?companyType=建筑设备"  hover-class="other-navigator-hover" class="plate-item">
      <view class="plate-img">
        <image src="{{a2src}}"></image>
        </view>
@@ -37,7 +37,7 @@
         专业人员
        </text>
   </navigator>
-  <navigator url="/pages/companyList/companyList?companyType=service" hover-class="navigator-hover" class="plate-item">
+  <navigator url="/pages/companyList/companyList?companyType=技术服务" hover-class="navigator-hover" class="plate-item">
      <view class="plate-img">
        <image src="{{a3src}}"></image>
        </view>
@@ -45,7 +45,7 @@
         技术服务
        </text>
   </navigator>
-  <navigator url="/pages/about/about" hover-class="navigator-hover" class="plate-item">
+  <navigator url="/pages/companyList/companyList?companyType=建筑劳务" hover-class="navigator-hover" class="plate-item">
      <view class="plate-img">
        <image src="{{a3src}}"></image>
        </view>
@@ -53,7 +53,7 @@
         建筑劳务
        </text>
   </navigator>
-  <navigator url="/pages/about/about" hover-class="navigator-hover" class="plate-item">
+  <navigator url="/pages/companyList/companyList?companyType=其他公司" hover-class="navigator-hover" class="plate-item">
      <view class="plate-img">
        <image src="{{a3src}}"></image>
        </view>

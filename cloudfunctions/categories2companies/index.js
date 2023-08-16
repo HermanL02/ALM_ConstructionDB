@@ -7,14 +7,18 @@ const db = cloud.database()
 
 exports.main = async (event, context) => {
     const categories = event.categories;
+    const pageIndex = event.pageIndex || 0;
+    const PAGE_SIZE = 100;
 
     try {
         // 从数据库中检索属于这些分类的公司
         const queryResult = await db.collection('companies').where({
             'companyTypes': db.command.in(categories)
-        }).get()
+        })
+        .skip(pageIndex * PAGE_SIZE)
+        .limit(PAGE_SIZE)
+        .get()
 
-        // 由于我们使用的是 `$in` 操作符，所以返回的公司列表不会有重复
         const companies = queryResult.data;
 
         return {

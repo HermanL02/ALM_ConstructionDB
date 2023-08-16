@@ -1,0 +1,3 @@
+<view class="container">
+    <button bindtap="uploadCSV">上传XLSX表格数据文件</button>
+</view>

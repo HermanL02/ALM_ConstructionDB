@@ -1,13 +1,19 @@
 /* components/company-item/company-item.wxss */
 .companyItem {
   background: #fff;
-  border-radius: 16rpx;
+  border-radius: 20rpx;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.08); /* 添加阴影效果 */
   box-sizing: border-box;
   display: flex;
   margin-bottom: 24rpx;
   padding: 24rpx 32rpx;
   position: relative;
+  transition: box-shadow 0.3s ease; /* 添加过渡效果 */
   width: 100%;
+}
+
+.companyItem:hover {
+  box-shadow: 2px 2px 14px rgba(0,0,0,0.12); /* 鼠标悬停时的阴影效果 */
 }
 
 .companyItem .right {
@@ -26,7 +32,7 @@
   color: #333;
   display: -webkit-box;
   font-size: 32rpx;
-  font-weight: 500;
+  font-weight: 600; /* 增加字体加粗度 */
   line-height: 40rpx;
   overflow: hidden;
   padding-right: 80rpx;
@@ -34,7 +40,7 @@
 }
 
 .companyItem .right .desc {
-  color: #666;
+  color: #777; /* 使颜色稍微深一点 */
   font-size: 26rpx;
   font-weight: 400;
   line-height: 36rpx;
@@ -45,17 +51,19 @@
 
 .companyItem .right .tags {
   display: flex;
+  margin-top: 12rpx; /* 添加一点顶部间距 */
 }
 
 .companyItem .right .tags .tag {
-  background: #f1f2ff;
-  border-radius: 8rpx;
-  color: #203fcc;
+  background: #007BFF; /* 使用上面提到的蓝色 */
+  border-radius: 20rpx; /* 增大圆角 */
+  color: white; /* 改为白色文本 */
   display: inline-block;
   font-size: 24rpx;
-  font-weight: 500;
+  font-weight: 600; /* 增加字体加粗度 */
   margin-right: 12rpx;
-  padding: 6rpx 10rpx;
+  padding: 8rpx 16rpx; /* 增加一些内部间距 */
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* 添加阴影 */
 }
 
 .companyItem .score {
@@ -71,4 +79,10 @@
   position: absolute;
   right: 20rpx;
   top: 0;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.12); /* 添加阴影 */
+}
+
+.m-x-20 {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
 }

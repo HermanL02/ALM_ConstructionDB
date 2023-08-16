@@ -131,3 +131,6 @@
   background: #eeeeee;
 }
 
+.weui-btn_primary {
+  background-color: #ADD8E6;
+}

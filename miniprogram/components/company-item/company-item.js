@@ -3,12 +3,12 @@ Component({
       company: {
           type: Object,
           value: {
-              id:"",
+              _id:"",
               logo: "",
-              name: "",
-              cityName: "",
-              foundedYear: "",
-              tagNames: [],
+              companyName: "",
+              companyCity: "",
+              foundYear: "",
+              companyTypes: [],
           }
       },
       mainProduct: {
@@ -27,10 +27,10 @@ Component({
 
   methods: {
       onCompanyInfo: function(e) {
-        const id = this.data.company.id;
-        const name = this.data.company.name;
+        const _id = this.data.company._id;
+        const name = this.data.company.companyName;
         wx.navigateTo({
-          url: `/pages/company/detail?id=${id}&name=${name}`
+          url: `/pages/company/detail?id=${_id}&name=${name}`
         });
       }
   }

@@ -46,11 +46,23 @@
 }
 
 .font-32 {
-  font-size: 32px; /* 或者其他单位如 rem, pt 等，取决于实际的使用情境 */
+  font-size: 20px; /* 或者其他单位如 rem, pt 等，取决于实际的使用情境 */
 }
 
 .p-b-2 {
   padding-bottom: 2px; /* 或者其他单位如 rem, em 等，取决于实际的使用情境 */
+}
+.floating-phone {
+  position: fixed;    /* 固定位置 */
+  right: 10px;        /* 距离右侧的距离 */
+  bottom: 70px;       /* 距离底部的距离 */
+  background-color: #f4f4f4;   /* 背景色 */
+  border-radius: 50%;   /* 圆形形状 */
+  padding: 10px 15px;   /* 内边距 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);  /* 阴影效果 */
+  font-size: 24px;      /* 图标大小 */
+  z-index: 9999;        /* 保证其位于其他元素之上 */
+  text-align: center;   /* 文本居中 */
 }
 
   .desc .header {
@@ -109,5 +121,6 @@
       height: 92rpx;
       line-height: 92rpx;
       text-align: center;
+      
   }
   

@@ -14,10 +14,22 @@ Page({
     imgUrls: [
 
     ],
+    keyword: '',
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
     duration: 1000 
+  },
+  bindSearchInput: function(e) {
+    this.setData({
+      keyword: e.detail.value
+    });
+  },
+
+  onSearchTap: function() {
+    wx.navigateTo({
+      url: `/pages/results/results?keyword=${this.data.keyword}`
+    });
   },
   onShareAppMessage: function (res) {
     if (res.from === 'button') {
@@ -25,7 +37,7 @@ Page({
       console.log(res.target)
     }
     return {
-      title: '教育模板首页',
+      title: '爱乐盟建设库首页',
       path: '/pages/index/index',
       success: function (res) {
         // 转发成功

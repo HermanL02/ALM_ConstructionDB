@@ -34,18 +34,18 @@ exports.main = async (event, context) => {
         if (queryResult.data.length === 0) {
             // 该公司名在数据库中不存在，添加公司
             const companyData = {
-              'companyName': companyName,
-              'companyTypes': companyBusinessTypes,  // 使用分割后的数组
-              'companyAddress': row[2],
-              'companyIntro': row[3],
-              'contact': row[4],
-              'contact': row[5],
-              'reference': row[6],
-              'referencePhone': row[7],
-              'foundYear': row[8],
-              'companyCity': row[9],
-              'projectList': []
-               // 这里增加了一个空的项目列表
+              'companyName': String(companyName),
+              'companyTypes': companyBusinessTypes.map(item => String(item)),  // 使用分割后的数组并确保每个项都是字符串
+              'companyAddress': String(row[2]),
+              'companyIntro': String(row[3]),
+              'contactPerson': String(row[4]),
+              'contact': String(row[5]),
+              'reference': String(row[6]),
+              'referencePhone': String(row[7]),
+              'foundYear': String(row[8]),
+              'companyCity': String(row[9]),
+              'projectList': [],
+              'evaluations': []
           }
           
 

@@ -1,26 +1,31 @@
 <view class="page">
-    <company-item company="{{info}}" isInfo="{{true}}" wx:if="{{info.id}}"></company-item>
+    <company-item company="{{company}}" isInfo="{{true}}" ></company-item>
     
     <view class="card desc m-b-24">
         <text class="header">详细介绍</text>
-        
         <view class="m-t-70 w-full">
-            <text>{{info.detail}}</text>
-        </view>
-        
-        <view class="flex items-center justify-center m-t-48 m-b-12" style="color:#1d2ce4;">
-            <view bindtap="onUp" class="p-x-24 p-y-2 flex f-center m-r-24" style="background:#f1f2ff;border-radius:24rpx;">
-                <u-icon color="#1d2ce4" name="{{info.thumbStatus===1?'thumb-up-fill':'thumb-up'}}" size="24"></u-icon>
-                <text class="m-l-8">{{info.up||0}}</text>
-            </view>
-            
-            <view bindtap="onDown" class="p-x-24 p-y-2 flex f-center" style="background:#f1f2ff;border-radius:24rpx;">
-                <u-icon color="#1d2ce4" name="{{info.thumbStatus===0?'thumb-down-fill':'thumb-down'}}" size="24"></u-icon>
-                <text class="m-l-8">{{info.down||0}}</text>
-            </view>
+            <text>{{company.companyIntro}}</text>
         </view>
     </view>
-    
+    <view class="card desc m-b-24">
+        <text class="header">公司地址</text>
+        <view class="m-t-70 w-full">
+            <text>{{company.companyAddress}}</text>
+        </view>
+    </view>
+    <view class="card desc m-b-24">
+        <text class="header">公司联系人[点击右下角图标一建拨打]</text>
+        <view class="m-t-70 w-full">
+            <text>{{company.contactPerson}}</text>
+        </view>
+    </view>
+    <view class="card desc m-b-24">
+        <text class="header">公司引荐人</text>
+        <view class="m-t-70 w-full">
+            <text>{{company.reference}} {{company.referencePhone}}</text>
+        </view>
+    </view>
+
     <view class="card m-b-24 p-b-2" wx:if="{{relatedProject}}">
         <view class="font-500 font-32">相关项目</view>
         <project-item project="{{relatedProject}}" showFooter="{{false}}"></project-item>
@@ -28,16 +33,21 @@
     
     <view class="card m-b-24">
         <view class="font-500 font-32">评论（{{totalEvaluation}}）</view>
-        <evaluation-item evaluation="{{evaluation}}" wx:for="{{evaluations}}" wx:key="id"></evaluation-item>
-        <view bindtap="onMoreEvaluations" class="flex f-center m-t-32 c-blue" wx:if="{{totalEvaluation>evaluations.length}}">
-            <text class="m-r-8">展开更多评论</text>
-            <u-icon color="#203fcc" name="arrow-right" size="13"></u-icon>
-        </view>
+  
+        <block wx:for="{{company.evaluations}}" wx:key="index">
+          <evaluation-item evaluation="{{item}}"></evaluation-item>
+        </block>
     </view>
     
     <view class="footer">
         <view bindtap="onScore" class="footer-btn w-full">立即评价</view>
     </view>
-    
+    <!-- 这里我们只是使用了电话图标，你可以选择使用图片或其他图标库中的图标 -->
+    <!-- pages/index/index.wxml -->
+    <view class="floating-phone" bindtap="makePhoneCall">
+      📞
+    </view>
+
+
     <zz-drag-button bind:btnClick="onCall" existTabBar="{{true}}"></zz-drag-button>
 </view>

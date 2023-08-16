@@ -3,10 +3,33 @@
   align-items: center;
   padding: 10px;
 }
+.custom-picker {
+  width: 80%; /* 使选择器宽度为容器的80% */
+  margin: 10rpx auto; /* 居中选择器 */
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1); /* 轻微的阴影效果 */
+}
+
+.picker {
+  height: 80rpx; /* 设定高度 */
+  line-height: 80rpx; /* 使文字垂直居中 */
+  background: linear-gradient(160deg, #673AB7, #9C27B0); /* 线性渐变背景 */
+  border-radius: 40rpx; /* 圆角 */
+  text-align: center; /* 使文字水平居中 */
+  color: white; /* 文字颜色为白色 */
+  font-size: 32rpx; /* 设定字体大小 */
+  font-weight: 500; /* 设定字体的粗细程度 */
+  padding: 0 20rpx; /* 在左右两侧添加一些内边距 */
+}
 
 .filter-label {
   margin-right: 10px;
 }
+.loading {
+  text-align: center;
+  padding: 20rpx 0;
+  font-size: 28rpx;
+}
+
 .custom-picker .picker {
  
   font-size: 20px; /* 修改字体大小 */

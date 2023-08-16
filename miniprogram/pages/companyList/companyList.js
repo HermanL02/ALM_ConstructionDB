@@ -5,92 +5,100 @@ Page({
    * 页面的初始数据
    */
   data: {
-    categories: ['设计', '监理', '可研', '造价', '项目管理', '测绘'],
-    selectedCategory: "类别",
+    categories: [],
+    selectedCategory: "选择类别",
     sortingMethods: ['按成立时间排序', '按合作项目数量排序'],
     selectedSortingMethod: '排序方式',
-    companies: [
-      {
-        logo: "...",
-        name: "沈阳市金罗盘建筑设计有限公司",
-        cityName: "沈阳市",
-        foundedYear: "2007",
-        tagNames: ["设计","监理","测绘"],
-      },
-      // ... 其他公司
-    ]
-},
+    companies: [],
+    pageIndex: 0,
+    loading: false
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: async function (options) {
     const companyType = options.companyType;
-    // 根据 companyType 获取和显示公司列表
+
+    // 设置导航栏标题
     wx.setNavigationBarTitle({
       title: companyType,
     })
+
+    // 从bigCates2smallCates云函数获取小分类列表
+    try {
+      const smallCatesResponse = await wx.cloud.callFunction({
+        name: 'bigCates2smallCates',
+        data: {
+          majorCategory: companyType
+        }
+      })
+      console.log(smallCatesResponse);
+      const smallCategories = smallCatesResponse.result.minorCategories;
+      console.log(smallCategories);
+      this.setData({
+        categories: smallCategories
+      });
+      this.searchCompanies();
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      wx.showToast({
+        title: '数据加载失败',
+        icon: 'error',
+        duration: 2000
+      });
+    }
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
+  searchCompanies: async function(){
+    const smallCategories = this.data.categories;
+    const pageIndex = this.data.pageIndex;
+    console.log(smallCategories)
+    try{
+      this.setData({ loading: true });
+      // 使用小分类列表查询对应的公司
+      const companiesResponse = await wx.cloud.callFunction({
+        name: 'categories2companies',
+        data: {
+          categories: smallCategories,
+          pageIndex:pageIndex
+        }
+      });
+      console.log(companiesResponse);
+      const companies = companiesResponse.result.companies;
 
-
-  onCategoryPickerChange: function(e) {
-    this.setData({
-        selectedCategory: this.data.categories[e.detail.value]
-    });
+      this.setData({
+        companies: this.data.companies.concat(companies),
+        pageIndex: this.data.pageIndex + 1,
+        loading: false,
+      });
+      console.log(companies);
+    }catch (error) {
+      this.setData({ loading: false });
+      console.error('Error fetching data:', error);
+      wx.showToast({
+        title: '数据加载失败',
+        icon: 'error',
+        duration: 2000
+      });
+    }
+  },
+  // ... 其他代码不变
+  onReachBottom: function() {
+    // 当页面被拉到底部时调用
+    this.searchCompanies();
 },
 
-onSortingPickerChange: function(e) {
+  onCategoryPickerChange: function (e) {
     this.setData({
-        selectedSortingMethod: this.data.sortingMethods[e.detail.value]
+      selectedCategory: this.data.categories[e.detail.value]
     });
-},
-
-  onReady() {
-
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
+  onSortingPickerChange: function (e) {
+    this.setData({
+      selectedSortingMethod: this.data.sortingMethods[e.detail.value]
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  }
+  // ... 其他代码不变
 })

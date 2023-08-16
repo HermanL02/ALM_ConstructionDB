@@ -1,4 +1,4 @@
-// pages/updateRecordResult/index.js
+// pages/result/result.js
 Page({
 
   /**

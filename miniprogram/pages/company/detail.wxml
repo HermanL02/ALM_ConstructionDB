@@ -26,10 +26,43 @@
         </view>
     </view>
 
-    <view class="card m-b-24 p-b-2" wx:if="{{relatedProject}}">
-        <view class="font-500 font-32">相关项目</view>
-        <project-item project="{{relatedProject}}" showFooter="{{false}}"></project-item>
+    <view wx:for="{{company.projectList}}" class="card desc m-b-24" wx:key="projectName">
+    <text class="header">项目名称</text>
+    <view class="m-t-70 w-full">
+        <text>{{item.projectName}}</text>
     </view>
+
+    <text class="header">项目类型</text>
+    <view class="m-t-16 w-full">
+        <text>{{item.projectType}}</text>
+    </view>
+
+    <text class="header">项目地址</text>
+    <view class="m-t-16 w-full">
+        <text>{{item.projectAddress}}</text>
+    </view>
+
+    <text class="header">项目时间</text>
+    <view class="m-t-16 w-full">
+        <text>{{item.projectTime}}</text>
+    </view>
+
+    <text class="header">资金</text>
+    <view class="m-t-16 w-full">
+        <text>{{item.fund}}</text>
+    </view>
+
+    <text class="header">评论</text>
+    <view class="m-t-16 w-full">
+        <text>{{item.comment}}</text>
+    </view>
+
+    <text class="header">备注</text>
+    <view class="m-t-16 w-full">
+        <text>{{item.note}}</text>
+    </view>
+</view>
+
     
     <view class="card m-b-24">
         <view class="font-500 font-32">评论（{{totalEvaluation}}）</view>

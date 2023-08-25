@@ -8,8 +8,9 @@ Page({
     categories: [],
     selectedCategory: "选择类别",
     sortingMethods: ['按成立时间排序', '按合作项目数量排序'],
-    selectedSortingMethod: '排序方式',
+    selectedSortingMethod: '排序（正在实现中）',
     totalCompanies: [],
+    displayedCompanies: [],
     pageIndex: 0,
     loading: false
   },
@@ -39,7 +40,10 @@ Page({
       this.setData({
         categories: smallCategories
       });
-      this.searchCompanies();
+      await this.searchCompanies();
+      this.setData({
+        displayedCompanies: this.data.totalCompanies,      
+      });
     } catch (error) {
       console.error('Error fetching data:', error);
       wx.showToast({
@@ -67,7 +71,7 @@ Page({
       const totalCompanies = companiesResponse.result.companies;
 
       this.setData({
-        totalCompanies: this.data.totalCompanies.concat(totalCompanies),
+        totalCompanies: this.data.totalCompanies.concat(totalCompanies),      
         pageIndex: this.data.pageIndex + 1,
         loading: false,
       });
@@ -86,12 +90,30 @@ Page({
   onReachBottom: function() {
     // 当页面被拉到底部时调用
     this.searchCompanies();
+    // 判断是否是默认值
+    if (this.data.selectedCategory !== "选择类别") {
+      this.filterCompany(this.data.selectedCategory);
+    }
+    
 },
 
   onCategoryPickerChange: function (e) {
     this.setData({
       selectedCategory: this.data.categories[e.detail.value]
     });
+    const selectedCategory =  this.data.categories[e.detail.value]
+    this.filterCompany(selectedCategory);
+  },
+
+  filterCompany:function(selectedCategory){
+    const filteredCompanies = this.data.totalCompanies.filter((company) => {
+      return company.companyTypes.includes(selectedCategory);
+    });
+    
+  // 更新totalCompanies数组
+  this.setData({
+    displayedCompanies: filteredCompanies
+  });
   },
 
   onSortingPickerChange: function (e) {

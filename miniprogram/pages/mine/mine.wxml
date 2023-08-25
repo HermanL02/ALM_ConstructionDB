@@ -33,7 +33,7 @@
   <view class="weui-btn weui-btn_primary" wx:if="{{role == 'admin'}}" bindtap="onAddviceadminTap">新增子管理员</view>
   <view class="weui-btn weui-btn_primary" wx:if="{{role == 'admin'}}" bindtap="navigateToUploadRecord">批量录入公司</view>
   <view class="weui-btn weui-btn_primary" wx:if="{{role == 'admin'}}" bindtap="navigateToUploadProject">批量录入项目</view>
-  <view class="weui-btn weui-btn_primary" wx:if="{{role == 'admin'}}" bindtap="navigateToUploadRecord">批量删除公司</view>
+  <view class="weui-btn weui-btn_primary" wx:if="{{role == 'admin'}}" bindtap="navigateToUploadRecord">批量删除公司(正在实现)</view>
 </view>
 
 

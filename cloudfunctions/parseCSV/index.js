@@ -24,7 +24,7 @@ exports.main = async (event, context) => {
 
     for (let row of rows) {
         const companyName = row[0]
-        const companyBusinessTypes = row[1].split('，').map(type => type.trim()); // 分割并去除任何前导或尾随的空白
+        const companyBusinessTypes = row[1].split('.').map(type => type.trim()); // 分割并去除任何前导或尾随的空白
 
         // 检查公司名是否已存在
         const queryResult = await db.collection('companies').where({

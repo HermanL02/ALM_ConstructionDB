@@ -9,7 +9,7 @@ Page({
     selectedCategory: "选择类别",
     sortingMethods: ['按成立时间排序', '按合作项目数量排序'],
     selectedSortingMethod: '排序方式',
-    companies: [],
+    totalCompanies: [],
     pageIndex: 0,
     loading: false
   },
@@ -64,14 +64,14 @@ Page({
         }
       });
       console.log(companiesResponse);
-      const companies = companiesResponse.result.companies;
+      const totalCompanies = companiesResponse.result.companies;
 
       this.setData({
-        companies: this.data.companies.concat(companies),
+        totalCompanies: this.data.totalCompanies.concat(totalCompanies),
         pageIndex: this.data.pageIndex + 1,
         loading: false,
       });
-      console.log(companies);
+     
     }catch (error) {
       this.setData({ loading: false });
       console.error('Error fetching data:', error);

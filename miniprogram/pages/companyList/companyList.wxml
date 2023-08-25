@@ -16,7 +16,7 @@
 </view>
 
 <view class="company-list">
-    <block wx:for="{{companies}}" wx:key="id">
+    <block wx:for="{{totalCompanies}}" wx:key="id">
       <company-item company="{{item}}"></company-item>
   </block>
 </view>

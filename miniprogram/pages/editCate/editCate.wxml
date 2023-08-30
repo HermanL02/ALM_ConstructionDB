@@ -1,0 +1,9 @@
+<view class="weui-cells">
+  <view wx:for="{{bigCateList}}" wx:key="index" bindtap="goToEditPage" data-bigCate="{{item}}" class="weui-cell weui-cell_access">
+    <view class="weui-cell__bd">
+      <text>{{item}}</text>
+    </view>
+    <view class="weui-cell__ft">
+    </view>
+  </view>
+</view>

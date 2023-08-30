@@ -1,0 +1,16 @@
+<view class="container">
+  <view wx:for="{{smallCate}}" wx:key="index">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <input type="text" class="weui-input" value="{{item}}" data-index="{{index}}" bindinput="updateSmallCateInput"/>
+      </view>
+      <view class="weui-cell__ft">
+        <button class="fancy-button" data-index="{{index}}" bindtap="removeSmallCate">删除</button>
+
+      </view>
+    </view>
+  </view>
+
+  <button bindtap="addSmallCate">添加 SmallCate</button>
+  <button bindtap="submit">提交更改</button>
+</view>

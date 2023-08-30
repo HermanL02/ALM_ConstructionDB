@@ -26,6 +26,11 @@ navigateToUploadProject: function() {
       url: '/pages/uploadRecord/uploadProject'
   });
 },
+navigateToEditCate:function(){
+  wx.navigateTo({
+    url:'/pages/editCate/editCate'
+  })
+},
   onLoad: function() {
     let that = this;
     wx.cloud.callFunction({

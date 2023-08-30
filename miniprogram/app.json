@@ -8,7 +8,9 @@
     "pages/uploadRecord/uploadRecord",
     "pages/uploadRecord/uploadProject",
     "pages/result/result",
-    "pages/results/results"
+    "pages/results/results",
+    "pages/editCate/editCate",
+    "pages/editCate/bigSmall"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

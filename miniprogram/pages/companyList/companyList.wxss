@@ -4,15 +4,19 @@
   padding: 10px;
 }
 .custom-picker {
-  width: 80%; /* 使选择器宽度为容器的80% */
-  margin: 10rpx auto; /* 居中选择器 */
-  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1); /* 轻微的阴影效果 */
+  width: 50%; /* 使选择器宽度为容器的80% */
 }
 
 .picker {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 20px; /* 修改字体大小 */
   height: 80rpx; /* 设定高度 */
   line-height: 80rpx; /* 使文字垂直居中 */
-  background: linear-gradient(160deg, #673AB7, #9C27B0); /* 线性渐变背景 */
+  background: linear-gradient(160deg, #0033CC, #66CCFF);
   border-radius: 40rpx; /* 圆角 */
   text-align: center; /* 使文字水平居中 */
   color: white; /* 文字颜色为白色 */
@@ -30,19 +34,9 @@
   font-size: 28rpx;
 }
 
-.custom-picker .picker {
- 
-  font-size: 20px; /* 修改字体大小 */
-  background-color: #ffffff; /* 修改背景颜色 */
-}
 
-.picker {
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
+
+
 
 .arrow {
   margin-left: 5px;

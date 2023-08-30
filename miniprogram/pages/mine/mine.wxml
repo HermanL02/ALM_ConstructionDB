@@ -35,7 +35,7 @@
   <view class="weui-btn weui-btn_primary" wx:if="{{role == 'admin'}}" bindtap="navigateToUploadProject">批量录入项目</view>
   <view class="weui-btn weui-btn_primary" wx:if="{{role == 'admin'}}" bindtap="navigateToDeleteRecord">批量删除公司</view>
   <view class="weui-btn weui-btn_primary" wx:if="{{role == 'admin'}}" bindtap="navigateToEditCate">修改分类</view>
-  <view class="weui-btn weui-btn_primary" wx:if="{{role == 'admin'}}" bindtap="navigateToEditCate">修改特定公司(查找)</view>
+  <view class="weui-btn weui-btn_primary" wx:if="{{role == 'admin'}}" bindtap="navigateToEditCate">修改特定公司</view>
 </view>
 
 

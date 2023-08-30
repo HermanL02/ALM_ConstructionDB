@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="search-bar">
   <mp-searchbar type="text" placeholder="Search" class="weui-input" bindinput="bindSearchInput"> </mp-searchbar>
-  <button class="weui-btn weui-btn_primary" bindtap="onSearchTap">搜索</button>
+  <button class="weui-btn weui-btn_primary" bindtap="onSearchTap">搜索公司</button>
 </view>
 <swiper indicator-dots="{{indicatorDots}}"
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">

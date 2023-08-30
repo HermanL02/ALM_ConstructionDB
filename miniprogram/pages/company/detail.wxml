@@ -3,7 +3,8 @@
     
     <info-card title="详细介绍" info="{{company.companyIntro}}"></info-card>
     <info-card title="公司地址" info="{{company.companyAddress}}"></info-card>
-    <info-card title="公司联系人[点击图标拨打]" info="{{company.contactPerson}}"></info-card>
+    <info-card title="公司联系人" info="{{company.contactPerson}}"></info-card>
+    <info-card title="公司联系电话[点击右下角一键拨打]" info="{{company.contact}}"></info-card>
     <info-card title="公司引荐人" info="{{company.reference}}"></info-card>
     <info-card title="引荐人联系方式" info="{{company.referencePhone}}"></info-card>
 

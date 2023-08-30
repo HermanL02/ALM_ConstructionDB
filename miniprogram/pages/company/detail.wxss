@@ -27,16 +27,9 @@
 .font-500 {
   font-weight: 500;
 }
-/* 用于 card 内部的文本 */
-.card text {
-  font-size: 16px;
-  line-height: 1.5;
-}
 
-/* 添加间距和布局调整 */
-.card view {
-  margin-bottom: 8px;
-}
+
+
 
 /* 标题文本的样式 */
 .card text:first-child {
@@ -44,10 +37,7 @@
   margin-right: 8px;
 }
 
-/* 评论和备注特别处理 */
-.card view:last-child {
-  font-style: italic;
-}
+
 
 /* 项目类型和资金用不同的颜色突出显示 */
 .card .projectType {

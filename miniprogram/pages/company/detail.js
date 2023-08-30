@@ -27,7 +27,6 @@ evaluationTotalCommentCount: 5
     // options 中包含了传递给该页面的参数
     this.setData({
       _id: options.id,  // 获取_id
-      name: options.name,  // 获取name
     });
   },
 

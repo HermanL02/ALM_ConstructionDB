@@ -12,6 +12,15 @@ Component({
         date: '',  // 评价日期
         rating: '',
         comment: '',
+      },
+      observer(newVal, oldVal) {
+        // 当evaluation对象发生变化时，这里将会被调用。
+        if (newVal._openid) {
+          let lastFiveOpenId = newVal._openid.substr(-5);  // 截取最后五位
+          this.setData({
+            'evaluation.lastFiveOpenId': lastFiveOpenId,  // 存储最后五位到evaluation对象内
+          });
+        }
       }
     },
   },

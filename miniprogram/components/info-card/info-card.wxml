@@ -1,0 +1,6 @@
+<view class="card desc m-b-24" wx:if="{{info && info !== 'undefined'}}">
+    <text class="header">{{title}}</text>
+    <view class="m-t-70 w-full">
+        <text>{{info}}</text>
+    </view>
+</view>

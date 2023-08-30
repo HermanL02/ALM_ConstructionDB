@@ -1,30 +1,11 @@
 <view class="page">
     <company-item company="{{company}}" isInfo="{{true}}" ></company-item>
     
-    <view class="card desc m-b-24">
-        <text class="header">详细介绍</text>
-        <view class="m-t-70 w-full">
-            <text>{{company.companyIntro}}</text>
-        </view>
-    </view>
-    <view class="card desc m-b-24">
-        <text class="header">公司地址</text>
-        <view class="m-t-70 w-full">
-            <text>{{company.companyAddress}}</text>
-        </view>
-    </view>
-    <view class="card desc m-b-24">
-        <text class="header">公司联系人[点击右下角图标一建拨打]</text>
-        <view class="m-t-70 w-full">
-            <text>{{company.contactPerson}}</text>
-        </view>
-    </view>
-    <view class="card desc m-b-24">
-        <text class="header">公司引荐人</text>
-        <view class="m-t-70 w-full">
-            <text>{{company.reference}} {{company.referencePhone}}</text>
-        </view>
-    </view>
+    <info-card title="详细介绍" info="{{company.companyIntro}}"></info-card>
+    <info-card title="公司地址" info="{{company.companyAddress}}"></info-card>
+    <info-card title="公司联系人[点击图标拨打]" info="{{company.contactPerson}}"></info-card>
+    <info-card title="公司引荐人" info="{{company.reference}}"></info-card>
+    <info-card title="引荐人联系方式" info="{{company.referencePhone}}"></info-card>
 
     <view wx:for="{{company.projectList}}" class="card desc m-b-24" wx:key="projectName">
     <text>项目名称:</text>

@@ -1,9 +1,10 @@
 {
   "usingComponents": {
     "company-item": "/components/company-item/company-item",
-   
-    "evaluation-item": "/components/evaluation-item/evaluation-item"
+    "evaluation-item": "/components/evaluation-item/evaluation-item",
+    "info-card": "/components/info-card/info-card"
 
-  
+    
   }
+  
 }

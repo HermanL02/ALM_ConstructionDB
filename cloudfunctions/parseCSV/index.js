@@ -30,7 +30,9 @@ exports.main = async (event, context) => {
         const queryResult = await db.collection('companies').where({
             'companyName': companyName
         }).get()
-
+        if (!companyName) {
+          continue;
+        }
         if (queryResult.data.length === 0) {
             // 该公司名在数据库中不存在，添加公司
             const companyData = {

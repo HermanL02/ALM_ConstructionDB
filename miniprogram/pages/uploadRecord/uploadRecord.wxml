@@ -1,3 +1,5 @@
 <view class="container">
-    <button bindtap="uploadCSV">上传XLSX表格数据文件</button>
+  <text class="text-style">批量添加新公司</text>
+
+    <button bindtap="uploadCSV">上传XLSX表格文件</button>
 </view>

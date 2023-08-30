@@ -4,3 +4,13 @@
   align-items: center;
   height: 100vh;
 }
+.text-style {
+  font-size: 16px; /* Set font size */
+  font-weight: bold; /* Set font weight */
+  color: #333333; /* Set text color */
+  text-align: center; /* Center align text */
+  padding: 10px; /* Add padding */
+  border-radius: 8px; /* Add rounded corners */
+  background-color: #f5f5f5; /* Set background color */
+  margin: 10px; /* Add margin */
+}

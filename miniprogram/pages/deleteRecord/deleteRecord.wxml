@@ -1,4 +1,5 @@
 <view class="container">
-  <text class="text-style">批量添加新项目</text>
+  <text class="text-style">批量删除新公司</text>
+
     <button bindtap="uploadCSV">上传XLSX表格数据文件</button>
 </view>

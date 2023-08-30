@@ -21,6 +21,11 @@ Page({
         url: '/pages/uploadRecord/uploadRecord'
     });
 },
+navigateToDeleteRecord: function() {
+  wx.navigateTo({
+      url: '/pages/deleteRecord/deleteRecord'
+  });
+},
 navigateToUploadProject: function() {
   wx.navigateTo({
       url: '/pages/uploadRecord/uploadProject'

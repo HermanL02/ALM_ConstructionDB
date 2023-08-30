@@ -4,10 +4,13 @@
     <view class="right">
         <view class="title">{{company.companyName}}</view>
         <view class="desc">
-            <text>{{company.companyCity || '--'}}</text>
-            <text class="m-x-20" style="color:#ededed;">ǀ</text>
-            <text>{{'创立于' + company.foundYear + '年'}}</text>
+          <text wx:if="{{company.companyCity && company.companyCity !== 'undefined'}}">{{company.companyCity}}</text>
+          <text wx:else>未知城市</text>
+          <text class="m-x-20" style="color:#ededed;">ǀ</text>
+          <text wx:if="{{company.foundYear && company.foundYear !== 'undefined'}}">创立于{{company.foundYear}}年</text>
+          <text wx:else>未设置年份</text>
         </view>
+
         <view class="desc">{{'产品主营：' + mainProduct}}</view>
         <view class="tags">
             <text class="tag" wx:for="{{company.companyTypes}}" wx:key="*this">{{item}}</text>
